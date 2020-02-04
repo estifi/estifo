@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package burninginktheme
+ * @package ESTIF
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'burninginktheme' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'estif' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -37,22 +37,36 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$burninginktheme_description = get_bloginfo( 'description', 'display' );
-			if ( $burninginktheme_description || is_customize_preview() ) :
+			$estif_description = get_bloginfo( 'description', 'display' );
+			if ( $estif_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $burninginktheme_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $estif_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'burninginktheme' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+	Leull, [12.12.19 12:40]
+<nav id="site-navigation"  class="navbar navbar-expand-md navbar-dark top bg-dark">
+    <a class="navbar-brand" href="#">
+        <?php bloginfo('name'); ?>
+    </a>
+    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'estif' ); ?></button>
+
+Leull, [12.12.19 12:44]
+<?php
+            wp_nav_menu([
+            'menu'            => 'primary-menu',
+            'theme_location'  => 'menu-1',
+            'container'       => 'div',
+            'container_id'    => 'navbarCollapse',
+            'container_class' => 'collapse navbar-collapse',
+            'menu_id'         => false,
+            'menu_class'      => 'navbar-nav mr-auto',
+            'depth'           => 0,
+            'fallback_cb'     => 'functions::fallback',
+            'walker'          => new estif_navbar()
+            ]);
+        ?>
+		</nav>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
