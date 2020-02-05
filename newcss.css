@@ -1,0 +1,63 @@
+
+h1{
+    color: rgb(43, 226, 141);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.divs{
+    border-radius: 20px;
+    display: inline-block;
+    font-style: oblique;
+    padding: 20px;
+    text-align: center;
+}
+.divs2{
+    border-radius: 20px;
+    display: inline-block;
+    background-color: rgb(220, 226, 43);
+    font-style: oblique;
+    padding: 20px;
+    text-align: center;
+}
+.footerNav{
+    float: right;
+}
+#cont{
+    padding: 3rem;
+    border: rgb(27, 13, 126) solid;
+    border-radius: 2rem;
+    background-color: honeydew;
+    margin: 5rem;
+}
+#posts{
+    margin-top: 1rem;
+    padding: 3rem;
+    border: rgb(13, 126, 126) double 1rem;
+    border-radius: 2rem;
+    background-color: honeydew;
+}
+#sidebar{
+    margin-top: 1rem;
+    padding: 3rem;
+    border: rgb(13, 126, 126) double 1rem;
+    border-radius: 2rem;
+    background-color: honeydew;
+}
+#title{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.535);
+}
+#bgimg{
+    background-color: honeydew;
+    background-image: url('../screenshot.jpg');
+}
+#headr{
+    color: rgb(43, 226, 141);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-style: normal;
+}
